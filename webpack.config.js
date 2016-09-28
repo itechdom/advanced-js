@@ -9,9 +9,6 @@ module.exports = {
 		publicPath: "/dist/",
 		filename: '[name].js'
 	},
-	eslint: {
-		configFile: './eslintrc.json'
-	},
 	resolve: {
         extensions:['','.js','.jsx'],
 		modulesDirectories: ['app', 'node_modules', 'base_modules']
@@ -22,9 +19,19 @@ module.exports = {
 			loader: 'json-loader'
 		}],
 		loaders: [
-			{test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loaders: ['eslint-loader','babel']},
-			{test: /\.html$/, loader: 'raw'},
-			{test: /\.css$/, loader: "style-loader!css-loader"},
+			{
+                test: /\.js$/, 
+                exclude: [/app\/lib/, /node_modules/], 
+                loader: 'babel'
+            },
+			{
+                test: /\.html$/, 
+                loader: 'raw'
+            },
+			{
+                test: /\.css$/, 
+                loader: "style-loader!css-loader"
+            },
 			{
 				test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/,
 				loader: 'file-loader'
@@ -33,22 +40,11 @@ module.exports = {
 				test: /\.scss$/,
                 loaders: ["style", "css", "sass"]	
 			},
-			{
-				test: /\.md$/,
-				loader: "html!markdown"
-			},
             {
                 test: /\.jsx?$/,
                 loaders: ['babel']
-            },
-            { test: /\.tsx?$/, loader: 'ts-loader?compiler=ntypescript' }
-        ],
-            postLoaders:[
-            {
-                include: path.resolve(__dirname, 'node_modules/pixi.js'),
-				loader: 'transform?brfs'
-			}
-		]
+            }
+        ]
 	},
 	plugins: [
 		new webpack.ProvidePlugin({
