@@ -10,7 +10,7 @@ module.exports = {
 		filename: '[name].js'
 	},
 	resolve: {
-        extensions:['','.js','.jsx'],
+		extensions:['','.js','.jsx'],
 		modulesDirectories: ['app', 'node_modules', 'base_modules']
 	},
 	module: {
@@ -20,31 +20,27 @@ module.exports = {
 		}],
 		loaders: [
 			{
-                test: /\.js$/,
-                exclude: [/app\/lib/, /node_modules/],
-                loader: 'babel'
-            },
+				test: /\.js$/,
+				exclude: [/app\/lib/, /node_modules/],
+				loader: 'babel'
+			},
 			{
-                test: /\.html$/,
-                loader: 'raw'
-            },
-			{
-                test: /\.css$/,
-                loader: "style-loader!css-loader"
-            },
+				test: /\.html$/,
+				loader: 'raw'
+			},
 			{
 				test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/,
 				loader: 'file-loader'
 			},
 			{
 				test: /\.scss$/,
-                loaders: ["style", "css", "sass"]
+				loaders: ["style", "css", "sass"]
 			},
-            {
-                test: /\.jsx?$/,
-                loaders: ['babel']
-            }
-        ]
+			{
+				test: /\.jsx?$/,
+				loaders: ['babel']
+			}
+		]
 	},
 	plugins: [
 		new webpack.ProvidePlugin({
