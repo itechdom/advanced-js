@@ -20,16 +20,16 @@ module.exports = {
 		}],
 		loaders: [
 			{
-                test: /\.js$/, 
-                exclude: [/app\/lib/, /node_modules/], 
+                test: /\.js$/,
+                exclude: [/app\/lib/, /node_modules/],
                 loader: 'babel'
             },
 			{
-                test: /\.html$/, 
+                test: /\.html$/,
                 loader: 'raw'
             },
 			{
-                test: /\.css$/, 
+                test: /\.css$/,
                 loader: "style-loader!css-loader"
             },
 			{
@@ -38,7 +38,7 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-                loaders: ["style", "css", "sass"]	
+                loaders: ["style", "css", "sass"]
 			},
             {
                 test: /\.jsx?$/,
