@@ -15,5 +15,5 @@ npm install
 
 to run the app:
 ```sh
-webpack-dev-server --port 3000
+webpack-dev-server --port 3000 --watch
 ```
